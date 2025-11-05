@@ -120,5 +120,14 @@ Only showing the last few lines of output, but all the data should be displayed.
     Enter year population borough: 9999 4000 Stuy
     File updated.
 
-          
+## Testeing
 
+You should be able to test with terminal input, or by using a script with the echo command e.g.
+
+```
+echo "TEST ADD:"
+echo "2000 1 A B" | ./structrw -add_data > /dev/null
+echo "2003 2 C D" | ./structrw -add_data > /dev/null
+echo "TEST UPDATE (updates 2003,2,C,D):"
+echo "1\n2005 21 B C" | ./structrw -update_data > /dev/null
+```
