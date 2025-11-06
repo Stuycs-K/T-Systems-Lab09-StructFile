@@ -2,17 +2,21 @@
 
 ## Requirements
 
-You should have a makefile with compile and run target.
+You should have a makefile with compile target. The output of the compile must be a specified program name.
 
 `make compile` : should create a binary called `structrw` for ease of scripting on my end. That is compile *must* use `-o structrw`
 
 You will find a csv file of NYC census population values in the class notes called `nyc_pop.csv`. Place this in the same directory as your code/makefile but don't add it to your repo! I will provide my own with the same name.
 
-The header of the file is this: 
+The header of the file is formatted like this: 
+
+    Year,Place1,Place2,Place3,Place4,Place5
+
+Each Place can have spaces and punctuation:
     
     Year,Manhattan,Brooklyn nine-nine,Queens,The Bronx,Staten Island
 
-An example line of data is this: 
+Subsequent lines of the file are all data, and contain 6 numbers. An example line of data is this: 
 
     1790,33131,4549,6159,1781,3827
     
@@ -29,7 +33,7 @@ Store each piece of data using the following struct (exactly) :
     struct pop_entry {
       int year;
       int population;
-      char boro[15];
+      char boro[20];
     };
 
 Create a new file & write Or over-write any existing file named `nyc_pop.dat`. It should contain all of the data in your array of `struct pop_entry` . This file should contain the data directly, not text.
